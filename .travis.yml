@@ -12,6 +12,7 @@ before_install:
 - polymer install
 before_deploy:
 - polymer build --add-service-worker
+script: true
 deploy:
   provider: firebase
   token:
