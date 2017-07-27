@@ -11,11 +11,7 @@ install:
 - npm install -g polymer-cli
 - npm install
 - polymer install
-before_script:
-- npm run lint
 script:
-- xvfb-run npm run test
-- xvfb-run npm run test:integration
 - polymer build --add-service-worker
 deploy:
   provider: firebase
