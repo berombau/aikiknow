@@ -1,4 +1,5 @@
 {
+  "version": "0.0.1",
   "name": "polymer-starter-kit",
   "license": "BSD-3-Clause",
   "devDependencies": {
