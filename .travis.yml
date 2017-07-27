@@ -1,21 +1,23 @@
 language: node_js
-dist: precise
+dist: trusty
 sudo: required
 node_js:
-  - "node"
-  - "6"
+- node
+- '6'
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
-  - npm install -g polymer-cli
-  - npm install
-  - polymer install
+- npm install -g polymer-cli
+- npm install
+- polymer install
 before_script:
-  - npm run lint
+- npm run lint
 script:
-  - xvfb-run npm run test
-  - xvfb-run npm run test:integration
-env:
-  global:
-    secure: kpz9Y5V1YhA8WXAB1km4sxQUjs2NLU2owG6oQb087FoygtnEjG+pbS4oGanm/LrEkixmBAYQeBWdg/brufv3UfI5Djwi5+fkYSL4utTjfWoc47IPZVIYRFxsJ4wKRnvyBTjz2MM5t/AYVWr99EcitURYPtupz27GQ0AARR+gcSkp2ss8E9QmhxDk7/03mkBH1jA4ToVXWROVGzOvmcU+okwuHxLhvNl0O5rTneJg954jHvRAxQhmrkovUP8R19PZT4FwJdl20wv5Zosk6DS2Z9/MDQIYgwTn8FlRaMWsSoNe1/dBDksl9uhsIeZbQU2rPnT70qaMofmcPPuUFmXg2OvPUTKJo82zXiYjBZhyTckXke4F5JsG7cDiiTluVpg1nQcOgmpKzpb/4t3PuxKoUZpw3DxlsD2C7Em+GbvQiy1DX3f0bL6W2hHw2JvBHw+TCyR/qWrYEowOi1SRO6SfjgK/2eA3rHzz8sKnYwuZnqqziUANrfQdKfAFF96iaSTCnznEmVrT6k5rjSVoiWwVwXnFCdZ9eTkaeG92bsIZsNvp4nzJ0ybjPyDevEoRUdFQaVoNDjG3ASRV0fv9BqRhLIaX7zg2MTNFDAhQF1OO/S7y01D4Wca1OvrbshbhfhISu7U71wsGC7yq2gBuLlR8d1HefEvMAvMjTdoheulacX4=
+- xvfb-run npm run test
+- xvfb-run npm run test:integration
+- polymer build --add-service-worker
+deploy:
+  provider: firebase
+  token:
+    secure: BXsBv+LUTYEdDxA35DhIOsPwRZ4cda1NYaM3S5VScQksnlLqLooEjJa9RZo77+/csV4Mbt8Xr4Dgk1UlNVj863tR92SlzrWAPhQ3hyW7jKmsYAsx+XKsymDjkY6WEjvDCDbTZ7TCRjAW2ZGnl9nnL8r5rcbpt3a5+PRDP4BCkEp7A4xFide9A92WUlJQLWT3IMt/uZiGnbDb2PX/hvuN0KIp5SGmfeqPSbBt8kc4OKaF/Yh9X4Wmys/PbZf0wL0TgCmLCww37BWwvQKfEFNTYrUENpDULmAgM8c3p7xFzf307WGb1FTw5jAtgVwopG5iUL4ZGq0g9/9fOIWfTBLdGReiQBUfDxsLhpAi1ekGwg5ir8iUlxMntNV7xUOJsjX1u/hroUpTDR/xPQgAyJ5KQUsnmz2Ta725KjPSGal18N4oK3aL862EwR8g4Y12lZsPAGbPpshBvXanSnSN1JJMZZf/HzR0wCfXAdqU2/qSBSXxQlDDFIgdE23dSZGqEVXJ0zWRfBA8dzB/QpUFqunWGvVS9NmGqIctZKIhsoDhPPO7RTHiYmyRMltFQktvo5lXD1NkxlG1/mL6muPGSglYQMC1aY8LLRb1cZi5X4PYKj3MCOXqp5qXvAqnf60xj6cVGdMvblWNr2QhNH3QO5WLybPKLKIcwDjmCs0+5uCuK8c=
