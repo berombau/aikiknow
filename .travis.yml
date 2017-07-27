@@ -3,11 +3,14 @@ dist: trusty
 sudo: required
 node_js:
 - node
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - node_modules
 before_install:
 - yarn global add polymer-cli
 - polymer install
-script:
+before_deploy:
 - polymer build --add-service-worker
 deploy:
   provider: firebase
