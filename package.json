@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
-  "name": "polymer-starter-kit",
+  "name": "AikiKnow",
+  "flat": true,
   "license": "BSD-3-Clause",
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -15,5 +16,9 @@
     "test:integration": "polymer build # test that psk builds without error with the CLI",
     "dev": "polymer serve & npm run watch",
     "watch": "browser-sync start --proxy localhost:8081 --files 'src/*.html, src/*.js, images/*' "
-  }
+  },
+  "description": "A site for Aikido Knowledge",
+  "main": "index.js",
+  "repository": "https://github.com/berombau/aikiknow.git",
+  "author": "Benjamin Rombaut"
 }
