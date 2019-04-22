@@ -4,7 +4,7 @@
   "flat": true,
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.26.4",
     "eslint": "^4.5.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-html": "^3.2.0"
